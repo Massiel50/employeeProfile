@@ -56,7 +56,10 @@ function createTeam(){
 
     inquirer
         .prompt([
-            
+            type: "list",
+            name: "role",
+            message: "What employee would you like to add to the team?",
+            choices: ["Engineer", "Intern", "I am finished adding"]
         ])
         .then(answers => {
             // create a switch statement to choose between engineer, intern, or build team
@@ -106,5 +109,3 @@ fs.writeFileSync(outputPath, mainRender(teamMember), "utf-8");
 }
 
 mainApp()
-
-

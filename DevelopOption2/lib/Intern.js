@@ -18,4 +18,3 @@ class Intern extends Employee{
 
 // export manager
 module.exports = Intern;
-
