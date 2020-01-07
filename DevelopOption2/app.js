@@ -82,11 +82,15 @@ function getEngineer() {
 
     inquirer    
         .prompt([
-            
+            {
+                type: "input",
+                message: "What is the github user name?",
+                name: "gitHub"
+            },
 
         ])
-        .then(answers =>{
-           
+        .then(answer =>{
+            const engineerObj = new Engineer(name, id, email, answer);
         })
 
 }
