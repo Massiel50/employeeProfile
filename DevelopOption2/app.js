@@ -64,10 +64,10 @@ function createTeam(){
         .then(answers => {
             // create a switch statement to choose between engineer, intern, or build team
             switch(answers){
-                case engineer:
+                case "Engineer":
                     getEngineer();
                     break;
-                case intern:
+                case "Intern":
                     getIntern();
                     break;
                 default:
