@@ -85,30 +85,32 @@ function getEngineer() {
             {
                 type: "input",
                 message: "What is the Engineer's name?",
-                name: "name"
+                name: "engineerName"
             },
             {
                 type: "input",
                 message: "What is the Engineer's ID?",
-                name: "id"
+                name: "engineerId"
             },
             {
                 type: "input",
                 message: "What is Engineer's email address?",
-                name: "email"
+                name: "engineerEmail"
             },
             {
                 type: "input",
                 message: "What is the github user name?",
-                name: "gitHub"
+                name: "engineergitHub"
             },
 
         ])
-        .then(answer =>{
-            this.getGitHub = answer;
-            const engineerObj = new Engineer(name, id, email, gitHub);
-            const engineerCardHtml = engineerCard(engineerObj);
+        .then(answers =>{
+            this.getGitHub = answers.gitHub;
 
+            const {engineerName, engineerId, engineerEmail, engineergitHub} = answers;
+            const engineerObj = new Engineer(engineerName, engineerId, engineerEmail, engineergitHub);
+
+            const engineerCardHtml = engineerCard(engineerObj);
             teamMember.push(engineerCardHtml);
             createTeam();
         })
@@ -124,28 +126,31 @@ function getIntern() {
             {
                 type: "input",
                 message: "What is the Intern's name?",
-                name: "name"
+                name: "internName"
             },
             {
                 type: "input",
                 message: "What is the Intern's ID?",
-                name: "id"
+                name: "internId"
             },
             {
                 type: "input",
                 message: "What is Intern's email address?",
-                name: "email"
+                name: "internEmail"
             },
             {
                 type: "input",
                 message: "What is the intern's school?",
-                name: "school"
+                name: "internSchool"
             },
 
         ])
         .then(answers =>{
-            let school = answers.school;
-            const internObj = new Intern(name, id, email, school);
+            this.getSchool = answers.school;
+    
+            const {internName, internId, internEmail, internSchool} = answers;
+            const internObj = new Intern(internName, internId, internEmail, internSchool);
+
             const internCardHtml = internCard(internObj);
 
             teamMember.push(internCardHtml);
