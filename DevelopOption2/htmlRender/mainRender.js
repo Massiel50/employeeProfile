@@ -8,3 +8,4 @@ function mainRender(data){
 `
 }
 // export mainRender
+module.exports = mainRender;

@@ -19,3 +19,4 @@ function internCard(data){
 
 }
 // export internCard
+module.exports = internCard;
