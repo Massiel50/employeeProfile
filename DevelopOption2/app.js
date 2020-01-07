@@ -90,7 +90,12 @@ function getEngineer() {
 
         ])
         .then(answer =>{
-            const engineerObj = new Engineer(name, id, email, answer);
+            this.getGitHub = answer;
+            const engineerObj = new Engineer(name, id, email, gitHub);
+            const engineerCardHtml = managerCard(engineerObj);
+
+            teamMember.push(engineerCardHtml);
+            createTeam();
         })
 
 }
