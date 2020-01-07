@@ -11,7 +11,7 @@ function engineerCard(data){
         <ul class= "list-group">
             <li class= "list-group-item">ID: ${data.id}</li>
             <li class= "list-group-item">Email: <a href= "mailto${data.email}">${data.email}</a></li>
-            <li class= "list-group-item">Github Username: ${data.gitHub}</li>
+            <li class= "list-group-item">GitHub: <a href="https://github.com/${data.gitHub}" target="_blank" rel="noopener noreferrer">${data.gitHub}</a></li>
         </ul>
     </div>
     </div>
