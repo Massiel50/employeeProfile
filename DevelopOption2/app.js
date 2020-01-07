@@ -55,15 +55,15 @@ function mainApp() {
 function createTeam(){
 
     inquirer
-        .prompt([
+        .prompt([{
             type: "list",
             name: "role",
             message: "What employee would you like to add to the team?",
             choices: ["Engineer", "Intern", "I am finished adding"]
-        ])
+        }])
         .then(answers => {
             // create a switch statement to choose between engineer, intern, or build team
-            switch(expression){
+            switch(answers){
                 case engineer:
                     getEngineer();
                     break;
