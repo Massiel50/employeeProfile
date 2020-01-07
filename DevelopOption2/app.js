@@ -63,7 +63,7 @@ function createTeam(){
         }])
         .then(answers => {
             // create a switch statement to choose between engineer, intern, or build team
-            switch(answers){
+            switch(answers.role){
                 case "Engineer":
                     getEngineer();
                     break;
@@ -84,6 +84,21 @@ function getEngineer() {
         .prompt([
             {
                 type: "input",
+                message: "What is the Engineer's name?",
+                name: "name"
+            },
+            {
+                type: "input",
+                message: "What is the Engineer's ID?",
+                name: "id"
+            },
+            {
+                type: "input",
+                message: "What is Engineer's email address?",
+                name: "email"
+            },
+            {
+                type: "input",
                 message: "What is the github user name?",
                 name: "gitHub"
             },
@@ -101,9 +116,26 @@ function getEngineer() {
 }
 // a function that create an intern
 function getIntern() {
+    console.log("yes");
+    
 
     inquirer    
         .prompt([
+            {
+                type: "input",
+                message: "What is the Intern's name?",
+                name: "name"
+            },
+            {
+                type: "input",
+                message: "What is the Intern's ID?",
+                name: "id"
+            },
+            {
+                type: "input",
+                message: "What is Intern's email address?",
+                name: "email"
+            },
             {
                 type: "input",
                 message: "What is the intern's school?",
@@ -112,7 +144,7 @@ function getIntern() {
 
         ])
         .then(answers =>{
-            this.getschool = answer;
+            let school = answers.school;
             const internObj = new Intern(name, id, email, school);
             const internCardHtml = internCard(internObj);
 
