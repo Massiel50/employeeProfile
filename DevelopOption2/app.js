@@ -21,23 +21,33 @@ function mainApp() {
         .prompt([
             {
                 type: "input",
-                message: "What is the employees name?",
-                name: "name"
+                message: "What is the manager's name?",
+                name: "managerName"
             },
             {
                 type: "input",
-                message: "What is the employee ID?",
-                name: "id"
+                message: "What is the manager's ID?",
+                name: "managerId"
             },
             {
                 type: "input",
-                message: "What is the employee email address?",
-                name: "email"
+                message: "What is manager's email address?",
+                name: "managerEmail"
+            },
+            {
+                type: "input",
+                message: "What is manager's office number?",
+                name: "managerOfficeNum"
             }
-        
         ])
         .then(answers =>{
-            
+            const {managerName, managerId, managerEmail, managerOfficeNum} = answers;
+            const managerObj = new Manager(managerName, managerId, managerEmail, managerOfficeNum);
+
+            const managerCardHtml = managerCard(managerObj);
+
+            teamMember.push(managerCardHtml);
+            createTeam();
         })
 
 }
@@ -50,6 +60,16 @@ function createTeam(){
         ])
         .then(answers => {
             // create a switch statement to choose between engineer, intern, or build team
+            switch(expression){
+                case engineer:
+                    getEngineer();
+                    break;
+                case intern:
+                    getIntern();
+                    break;
+                default:
+                    buildTeam();
+            }
            
         })
 }
