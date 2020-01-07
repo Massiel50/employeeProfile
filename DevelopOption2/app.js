@@ -104,11 +104,20 @@ function getIntern() {
 
     inquirer    
         .prompt([
-          
+            {
+                type: "input",
+                message: "What is the intern's school?",
+                name: "school"
+            },
 
         ])
         .then(answers =>{
-          
+            this.getschool = answer;
+            const internObj = new Intern(name, id, email, school);
+            const internCardHtml = internCard(internObj);
+
+            teamMember.push(internCardHtml);
+            createTeam();
         })
 
 }
