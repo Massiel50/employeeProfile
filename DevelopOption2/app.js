@@ -37,12 +37,12 @@ function mainApp() {
             {
                 type: "input",
                 message: "What is manager's office number?",
-                name: "managerOfficeNum"
+                name: "managerOfficeNumber"
             }
         ])
         .then(answers =>{
-            const {managerName, managerId, managerEmail, managerOfficeNum} = answers;
-            const managerObj = new Manager(managerName, managerId, managerEmail, managerOfficeNum);
+            const {managerName, managerId, managerEmail, managerOfficeNumber} = answers;
+            const managerObj = new Manager(managerName, managerId, managerEmail, managerOfficeNumber);
 
             const managerCardHtml = managerCard(managerObj);
 
@@ -105,7 +105,6 @@ function getEngineer() {
 
         ])
         .then(answers =>{
-            this.getGitHub = answers.gitHub;
 
             const {engineerName, engineerId, engineerEmail, engineergitHub} = answers;
             const engineerObj = new Engineer(engineerName, engineerId, engineerEmail, engineergitHub);
@@ -118,8 +117,6 @@ function getEngineer() {
 }
 // a function that create an intern
 function getIntern() {
-    console.log("yes");
-    
 
     inquirer    
         .prompt([
@@ -146,7 +143,6 @@ function getIntern() {
 
         ])
         .then(answers =>{
-            this.getSchool = answers.school;
     
             const {internName, internId, internEmail, internSchool} = answers;
             const internObj = new Intern(internName, internId, internEmail, internSchool);
