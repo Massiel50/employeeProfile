@@ -1,7 +1,7 @@
 # employeeProfile
 Generates a profile of employees based the information inputed and spits onto the page.
 
-A CLI prompt will start by making a manager profile.
+Terminal prompt will start by making a manager profile.
 Submit the manager's name, id number, email and office number.
 
 After the manager profile is created, you are given a selection of team members to add to your team.
